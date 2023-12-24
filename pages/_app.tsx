@@ -4,8 +4,7 @@ import { Fragment } from "react";
 import Head from "next/head";
 import { Popover, Transition } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import Image from "next/image";
-
+import clientPromise from "../lib/mongodb";
 const navigation = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
@@ -133,4 +132,41 @@ export default function App({ Component, pageProps }: AppProps) {
       <Component {...pageProps} />
     </Fragment>
   );
+}
+export function Articoli({ articoli }) {
+  return (
+    <div>
+      <h1>Top 20 Movies of All Time</h1>
+      <p>
+        <small>(According to Metacritic)</small>
+      </p>
+      <ul>
+        {articoli.map((articolo) => (
+          <li>
+            <h2>{articolo.title}</h2>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export async function getServerSideProps(context) {
+  try {
+    const client = await clientPromise;
+
+    const db = client.db("andreacoiblog");
+
+    const articoli = await db
+      .collection("articoli")
+      .find({})
+      .limit(20)
+      .toArray();
+
+    return {
+      props: { articoli: JSON.parse(JSON.stringify(articoli)) },
+    };
+  } catch (e) {
+    console.error(e);
+  }
 }
