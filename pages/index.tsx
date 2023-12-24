@@ -1,13 +1,14 @@
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import clientPromise from "../lib/mongodb";
-export default function Home({ articoli }) {
+
+export default function Home({ articoli }: any) {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
         <h1 className={styles.title}>Tech Blog</h1>
         <div className="lista-articoli">
-          {articoli.map((articolo) => (
+          {articoli.map((articolo: any) => (
             <div className="articolo" key={articolo._id}>
               <h2>{articolo.titolo}</h2>
               <h3>{articolo.introtext}</h3>

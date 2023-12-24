@@ -1,8 +1,8 @@
 import clientPromise from "../lib/mongodb";
-export default function Articoli({ articoli }) {
+export default function Articoli({ articoli }: any) {
   return (
     <div className="lista-articoli">
-      {articoli.map((articolo) => (
+      {articoli.map((articolo: any) => (
         <div className="articolo" key={articolo._id}>
           <h2>{articolo.titolo}</h2>
           <h3>{articolo.introtext}</h3>
