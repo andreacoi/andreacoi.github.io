@@ -1,15 +1,15 @@
 import clientPromise from "../lib/mongodb";
 export default function Articoli({ articoli }) {
   return (
-    <ul>
+    <div className="lista-articoli">
       {articoli.map((articolo) => (
-        <li>
+        <div className="articolo" key={articolo._id}>
           <h2>{articolo.titolo}</h2>
           <h3>{articolo.introtext}</h3>
           <p>{articolo.fulltext}</p>
-        </li>
+        </div>
       ))}
-    </ul>
+    </div>
   );
 }
 

@@ -6,13 +6,15 @@ export default function Home({ articoli }) {
     <div className={styles.container}>
       <main className={styles.main}>
         <h1 className={styles.title}>Tech Blog</h1>
-        {articoli.map((articolo) => (
-          <li>
-            <h2>{articolo.titolo}</h2>
-            <h3>{articolo.introtext}</h3>
-            <p>{articolo.fulltext}</p>
-          </li>
-        ))}
+        <div className="lista-articoli">
+          {articoli.map((articolo) => (
+            <div className="articolo" key={articolo._id}>
+              <h2>{articolo.titolo}</h2>
+              <h3>{articolo.introtext}</h3>
+              <p>{articolo.fulltext}</p>
+            </div>
+          ))}
+        </div>
       </main>
 
       <footer className={styles.footer}></footer>
