@@ -2,7 +2,7 @@ import { remark } from "remark";
 import html from "remark-html";
 import * as fs from "fs";
 import * as path from "path";
-import * as matter from "gray-matter";
+import matter from "gray-matter";
 
 let path_articoli = "./data/articoli/";
 export async function singoloArticolo(id: number) {
