@@ -2,9 +2,9 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { Fragment } from "react";
 import Head from "next/head";
+import Footer from "../lib/footer";
 import { Popover, Transition } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import clientPromise from "../lib/mongodb";
 const navigation = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
@@ -130,6 +130,7 @@ export default function App({ Component, pageProps }: AppProps) {
         </div>
       </div>
       <Component {...pageProps} />
+      <Footer />
     </Fragment>
   );
 }
