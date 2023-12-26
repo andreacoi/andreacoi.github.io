@@ -4,7 +4,8 @@ import * as fs from "fs";
 import * as path from "path";
 import matter from "gray-matter";
 
-let path_articoli = "./data/articoli/";
+const path_articoli = "./data/articoli/";
+
 export async function singoloArticolo(id: number) {
   const fullpath = path.resolve(path.join(path_articoli + "01-hello-world.md"));
   const filecontent = fs.readFileSync(fullpath, "utf-8");
@@ -14,10 +15,27 @@ export async function singoloArticolo(id: number) {
   const processedContent = await remark()
     .use(html)
     .process(matterResult.content);
-  const contentHtml = processedContent.toString();
   let dati_articolo = [matterResult, processedContent];
   let serial_dati = JSON.stringify(dati_articolo);
   return serial_dati;
 }
 
-export async function ottieniArticoli() {}
+export async function ottieniArticoli() {
+  const dir = require("node-dir");
+  let file_list: any = [];
+  dir.readFiles(
+    path_articoli,
+    function (err: any, content: any, next: any) {
+      if (err) throw err;
+      console.log("content:", content);
+      next();
+    },
+    function (err: any, files: any) {
+      if (err) throw err;
+      file_list.push(files);
+      console.log("finished reading files:", files);
+    },
+  );
+
+  return file_list;
+}
