@@ -1,8 +1,6 @@
 import { ottieniArticoli } from "../lib/articolo";
 
 export default function Test(postData: any) {
-  let articoli = postData;
-  console.log(articoli);
   return 1;
 }
 
