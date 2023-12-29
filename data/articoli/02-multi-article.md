@@ -2,7 +2,7 @@
 layout: post
 id: 1
 title: "Hello World!"
-alias: "hello-world"
+alias: "02-multi-article"
 pubblicazione: "26-12-2023 17.33.00"
 categoria: "Test"
 tags: "test, boilerplate, blog"
