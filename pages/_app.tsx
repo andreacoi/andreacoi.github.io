@@ -1,4 +1,5 @@
 import "../styles/globals.css";
+import styles from "../styles/Home.module.css";
 import type { AppProps } from "next/app";
 import { Fragment } from "react";
 import Head from "next/head";
@@ -129,7 +130,13 @@ export default function App({ Component, pageProps }: AppProps) {
           />
         </div>
       </div>
-      <Component {...pageProps} />
+      <div className={styles.container}>
+        <main className={styles.main}>
+          <h1 className={styles.title}>Tech Blog</h1>
+          <Component {...pageProps} />
+        </main>
+        <footer className={styles.footer}></footer>
+      </div>
       <Footer />
     </Fragment>
   );
