@@ -3,6 +3,7 @@ import html from "remark-html";
 import * as fs from "fs";
 import * as path from "path";
 import matter from "gray-matter";
+import { getAllFiles, getAllFilesSync } from "get-all-files";
 
 const path_articoli = "./data/articoli/";
 
@@ -21,21 +22,17 @@ export async function singoloArticolo(id: number) {
 }
 
 export async function ottieniArticoli() {
-  const dir = require("node-dir");
-  let file_list: any = [];
-  dir.readFiles(
-    path_articoli,
-    function (err: any, content: any, next: any) {
-      if (err) throw err;
-      console.log("content:", content);
-      next();
-    },
-    function (err: any, files: any) {
-      if (err) throw err;
-      file_list.push(files);
-      console.log("finished reading files:", files);
-    },
-  );
-
-  return file_list;
+  // Lazily iterate over filenames asynchronously
+  let lista_articoli: Array<any> = [];
+  for await (const filename of getAllFiles(path_articoli)) {
+    const filecontent = fs.readFileSync(filename, "utf-8");
+    const matterResult = matter(filecontent);
+    const processedContent = await remark()
+      .use(html)
+      .process(matterResult.content);
+    let dati_articolo = [matterResult, processedContent];
+    lista_articoli.push(dati_articolo);
+  }
+  let serial_dati = JSON.stringify(lista_articoli);
+  return serial_dati;
 }
