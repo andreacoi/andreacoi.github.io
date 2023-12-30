@@ -132,7 +132,6 @@ export default function App({ Component, pageProps }: AppProps) {
       </div>
       <div className={styles.container}>
         <main className={styles.main}>
-          <h1 className={styles.title}>Tech Blog</h1>
           <Component {...pageProps} />
         </main>
         <footer className={styles.footer}></footer>
