@@ -3,12 +3,12 @@ import html from "remark-html";
 import * as fs from "fs";
 import * as path from "path";
 import matter from "gray-matter";
-import { getAllFiles, getAllFilesSync } from "get-all-files";
+import { getAllFiles } from "get-all-files";
 
 const path_articoli = "./data/articoli/";
 
-export async function singoloArticolo(id: number) {
-  const fullpath = path.resolve(path.join(path_articoli + "01-hello-world.md"));
+export async function singoloArticolo(slug: string) {
+  const fullpath = path.resolve(path.join(path_articoli + slug + ".md"));
   const filecontent = fs.readFileSync(fullpath, "utf-8");
   // Use gray-matter to parse the post metadata section
   const matterResult = matter(filecontent);
