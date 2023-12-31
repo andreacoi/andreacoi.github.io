@@ -1,4 +1,4 @@
-import { singoloArticolo } from "../../lib/articolo";
+import { ottieniArticoli, singoloArticolo } from "../../lib/articolo";
 import { GetStaticPaths } from "next";
 import parse from "html-react-parser";
 import Image from "next/image";
@@ -56,8 +56,13 @@ export default function Single({ postData }: any) {
 
 export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
   return {
-    //const paths = posts.map((post) => `/post/${slug}`),
-    paths: ["post/01-nuovo-blog"], //indicates that no page needs be created at build time
+    paths: [
+      {
+        params: {
+          slug: "01-nuovo-blog",
+        },
+      },
+    ],
     fallback: "blocking", //indicates the type of fallback
   };
 };
