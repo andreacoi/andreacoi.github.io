@@ -1,8 +1,4 @@
-import {
-  ottieniArticoli,
-  ottieniPathArticoli,
-  singoloArticolo,
-} from "../../lib/articolo";
+import { singoloArticolo } from "../../lib/articolo";
 import { GetStaticPaths } from "next";
 import parse from "html-react-parser";
 import Image from "next/image";
@@ -57,7 +53,7 @@ export default function Single({ postData }: any) {
     </div>
   );
 }
-// quando aggiungi un nuovo post in markdown nella cartella data/articoli ricorda di inserire l'alias in questo stack di oggettu.
+// quando aggiungi un nuovo post in markdown nella cartella data/articoli ricorda di inserire l'alias in questo stack di oggetti.
 // schema
 // {params : {slug: "01-nuovo-blog"}},{params : {slug: "02-post-nuovo"}}
 let params = { params: { slug: "01-nuovo-blog" } };
