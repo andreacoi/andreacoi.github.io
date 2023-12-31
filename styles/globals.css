@@ -45,7 +45,19 @@ a.lettering-logo {
   font-size: 48px;
 }
 
+ul.my-connections li a svg {
+  width: 32px;
+}
+
+ul.my-connections li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+div.bg-about {
+  background-image: url("https://images.unsplash.com/photo-1499336315816-097655dcfbda?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=2710&amp;q=80");
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
