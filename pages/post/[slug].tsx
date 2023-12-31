@@ -58,7 +58,6 @@ export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
   return {
     paths: [
       { params: { slug: "01-nuovo-blog" } },
-      { params: { slug: "02-ciao" } },
       // quando aggiungi un nuovo post in markdown nella cartella data/articoli ricorda di inserire l'alias in questo array.
     ],
     fallback: "blocking", //indicates the type of fallback
