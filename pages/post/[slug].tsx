@@ -57,11 +57,8 @@ export default function Single({ postData }: any) {
 export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
   return {
     paths: [
-      {
-        params: {
-          slug: ["01-nuovo-blog", "02-ciao"],
-        },
-      },
+      { params: { slug: "01-nuovo-post" } },
+      { params: { slug: "02-ciao" } },
     ],
     fallback: "blocking", //indicates the type of fallback
   };
