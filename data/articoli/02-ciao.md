@@ -2,7 +2,7 @@
 layout: post
 id: 2
 title: "Ciao"
-alias: "01-ciao"
+alias: "02-ciao"
 excerpt: "utilizzando le Github Pages, NextJS, e Markdown. Vi racconto come è andata."
 pubblicazione: "31-12-2023 17.33.00"
 categoria: "test"
