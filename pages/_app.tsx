@@ -3,13 +3,12 @@ import styles from "../styles/Home.module.css";
 import type { AppProps } from "next/app";
 import { Fragment } from "react";
 import Head from "next/head";
-import Footer from "../lib/footer";
+import Footer from "../components/footer";
 import { Popover, Transition } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 const navigation = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
-  { name: "Contacts", href: "/contacts" },
 ];
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -134,7 +133,6 @@ export default function App({ Component, pageProps }: AppProps) {
         <main className={styles.main}>
           <Component {...pageProps} />
         </main>
-        <footer className={styles.footer}></footer>
       </div>
       <Footer />
     </Fragment>
