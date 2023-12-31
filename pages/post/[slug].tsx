@@ -59,7 +59,7 @@ export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
     paths: [
       {
         params: {
-          slug: "01-nuovo-blog",
+          slug: ["01-nuovo-blog", "02-ciao"],
         },
       },
     ],
