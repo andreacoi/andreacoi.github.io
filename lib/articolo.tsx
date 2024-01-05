@@ -10,7 +10,6 @@ const path_articoli = "./data/articoli/";
 export async function singoloArticolo(slug: string) {
   const fullpath = path.resolve(path.join(path_articoli + slug + ".md"));
   const filecontent = fs.readFileSync(fullpath, "utf-8");
-  // Use gray-matter to parse the post metadata section
   const matterResult = matter(filecontent);
 
   const processedContent = await remark()
@@ -22,7 +21,6 @@ export async function singoloArticolo(slug: string) {
 }
 
 export async function ottieniArticoli() {
-  // Lazily iterate over filenames asynchronously
   let lista_articoli: Array<any> = [];
   for await (const filename of getAllFiles(path_articoli)) {
     const filecontent = fs.readFileSync(filename, "utf-8");
