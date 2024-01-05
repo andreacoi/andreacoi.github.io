@@ -45,10 +45,12 @@ Questo blog, così come lo state vedendo è progettato utilizzando tre component
 - Tailwind CSS;
 
 **React**
+
 React è una libreria frontend Javascript per creare interfacce utente. La curva di apprendimento è molto ripida perché in molti casi può risultare controintuitivo. Mantiene la sintassi base di ES6, ma ha un sistema di dichiarazione delle variabili leggermente più stringente (a livello di _scope_). Il templating è soggetto a un controllo sintattico forte e può essere organizzato in componenti.
 Un componente può essere funzionale (basato su funzioni) o basato su classi. Al render di tali componenti JSX (che viene effettuato tramite la libreria React DOM) possono essere passati al componente i cosìddetti **props**, che, sostanzialmente, sono dei parametri della funzione stessa.
 
 **NextJS**
+
 NextJS è un framework per applicazioni web basato su React, sviluppato da Vercel. Ho creato un sistema di routing statico grazie ad una delle feature principali del framework. In particolare, con la SSG (_Static Site Generator_) è possibile generare le rotte e i contenuti al build time (in fase di compilazione).
 Un'altra feature che ho implementato, grazie ad un plugin npm, è la codifica da markdown in html, migliorando sintassi e focus durante la stesura dei contenuti.
 
@@ -58,10 +60,12 @@ Prima di elaborare l'idea di utilizzare dei file .md per ogni singolo post avevo
 Ho così deciso di ricorrere a dei semplici file .md che vengono convertiti in HTML alla compilazione di tutta la giostra.
 
 **Tailwind CSS**
+
 NextJS adotta come proprio framework CSS base Tailwind CSS.
 Benché sia possibile utilizzare Tailwind CSS in appoggio a qualsivoglia tecnologia frontend web, credo che possa dare il suo meglio con NextJS. Ho trovato molto comoda la gestione delle griglie, dei breakpoint, dei colori codificati tramite classi e delle classi personalizzate al build time. Framework CSS ce ne sono a migliaia, ma devo dire che è davvero semplice ottenere un layout o applicare uno stile utilizzando Tailwind.
 
 **Piccolo appunto su Typescript**
+
 I formati file utilizzabili su NextJS sono essenzialmente due:
 
 - Typescript (.tsx);

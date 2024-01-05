@@ -58,6 +58,10 @@ div.bg-about {
   background-image: url("https://images.unsplash.com/photo-1499336315816-097655dcfbda?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=2710&amp;q=80");
 }
 
+h5 {
+  font-weight: 600 !important;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
