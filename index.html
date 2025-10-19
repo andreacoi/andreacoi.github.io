@@ -5,13 +5,16 @@ paginate: 5
 
 <!-- This loops through the paginated posts -->
 {% for post in paginator.posts %}
-<h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
-<p class="author">
-  <span class="date" style="color: #666;">{{ post.date | date: "%d-%m-%Y" }}</span>
-</p>
-<div class="content">
-  {{ post.excerpt }}
+<div class="single-post">
+  <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+  <p class="author">
+    <span class="date" style="color: #666;">{{ post.date | date: "%d-%m-%Y" }}</span>
+  </p>
+  <div class="content">
+    {{ post.excerpt }}
+  </div>
 </div>
+<hr style="margin:30px 0; color: #efefef;" />
 {% endfor %}
 
 <!-- Pagination links -->
