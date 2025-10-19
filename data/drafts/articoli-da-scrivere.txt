@@ -1,1 +1,0 @@
-NVIM, Lazyvim, tmux - costruire un ide minimal, ma potente
