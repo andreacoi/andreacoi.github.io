@@ -78,6 +78,8 @@ Poi, chiaro, non è tutto oro quello che luccica, ma perlomeno, nel processo di 
 
 E io ho a malapena scalfito la superficie e spero di poter andare a fondo. Spero di poter, un giorno, scrivere software "da solo" senza parlare con nessuno.
 
-Ma fino ad allora, non posso (e non voglio) definirmi uno sviluppatore. Sono solo un tizio che fa consulenza informatica.
+Ma fino ad allora, non posso (e non voglio) definirmi uno sviluppatore.
+
+Sono solo un tizio che fa consulenza informatica.
 
 Spero ancora per poco.
