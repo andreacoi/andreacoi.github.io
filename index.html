@@ -7,7 +7,7 @@ paginate: 5
 {% for post in paginator.posts %}
 <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
 <p class="author">
-  <span class="date">{{ post.date | date: "%d-%m-%Y" }}</span>
+  <span class="date" style="color: #666;">{{ post.date | date: "%d-%m-%Y" }}</span>
 </p>
 <div class="content">
   {{ post.excerpt }}
